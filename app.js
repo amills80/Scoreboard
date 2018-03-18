@@ -1,3 +1,9 @@
+//libs
+import React from 'react';
+import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
+var createReactClass = require('create-react-class');
+
 var PLAYERS = [
 	{
 		name: "Pearson Person",
@@ -17,7 +23,7 @@ var PLAYERS = [
 ];
 
 	var nextId= 4;
-	var Stopwatch = React.createClass({
+	var Stopwatch = createReactClass({
 		getInitialState: function() {
 			return {
 				running: false,
@@ -78,9 +84,9 @@ var PLAYERS = [
 	}
 })
 
-	var AddPlayerForm = React.createClass({
+	var AddPlayerForm = createReactClass({
 		propTypes: {
-		onAdd: React.PropTypes.func.isRequired,
+		onAdd: PropTypes.func.isRequired,
 		},
 
 		getInitialState: function() {
@@ -133,7 +139,7 @@ function Stats(props) {
 }
 
 	Stats.propTypes = {
-		players: React.PropTypes.array.isRequired,
+		players: PropTypes.array.isRequired,
 
 	};
 
@@ -148,8 +154,8 @@ function Header(props) {
 }
 
 Header.propTypes = {
-	title: React.PropTypes.string.isRequired,
-	players: React.PropTypes.array.isRequired,
+	title: PropTypes.string.isRequired,
+	players: PropTypes.array.isRequired,
 };
 
 
@@ -164,8 +170,8 @@ function Counter(props) {
 }
 
 Counter.propTypes = {
-	score: React.PropTypes.number.isRequired,
-	onChange: React.PropTypes.func.isRequired,
+	score: PropTypes.number.isRequired,
+	onChange: PropTypes.func.isRequired,
 }
 
 function Player(props) {
@@ -183,19 +189,19 @@ function Player(props) {
 }
 
 Player.propTypes = {
-	name: React.PropTypes.string.isRequired,
-	score: React.PropTypes.number.isRequired,
-	onScoreChange: React.PropTypes.func.isRequired,
-	onRemove: React.PropTypes.func.isRequired,
+	name: PropTypes.string.isRequired,
+	score: PropTypes.number.isRequired,
+	onScoreChange: PropTypes.func.isRequired,
+	onRemove: PropTypes.func.isRequired,
 };
 
-var Application = React.createClass({
+var Application = createReactClass({
 	propTypes: {
-		title: React.PropTypes.string,
-		initialPlayers: React.PropTypes.arrayOf(React.PropTypes.shape({
-			name: React.PropTypes.string.isRequired,
-			score: React.PropTypes.number.isRequired,
-			id: React.PropTypes.number.isRequired,
+		title: PropTypes.string,
+		initialPlayers: PropTypes.arrayOf(PropTypes.shape({
+			name: PropTypes.string.isRequired,
+			score: PropTypes.number.isRequired,
+			id: PropTypes.number.isRequired,
 		})).isRequired,
 	},
 
