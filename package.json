@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node_modules/.bin/webpack --optimize-minimize"
+    "build": "node_modules/.bin/webpack --optimize-minimize",
+    "start": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
